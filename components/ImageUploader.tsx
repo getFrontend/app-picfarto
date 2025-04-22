@@ -69,7 +69,7 @@ export default function ImageUploader({ onImageUpload }: ImageUploaderProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, type: "spring" }}
-      whileHover={{ scale: 1.01 }}
+      whileHover={{ opacity: 0.9 }}
     >
       <input
         type="file"

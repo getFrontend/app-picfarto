@@ -11,7 +11,11 @@ export function ThemeToggle() {
   React.useEffect(() => {
     // Check if user has a theme preference in localStorage
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (
+      storedTheme === "dark" ||
+      (!storedTheme &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
     } else {
@@ -23,7 +27,7 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    
+
     // Update localStorage and document class
     localStorage.setItem("theme", newTheme);
     if (newTheme === "dark") {
@@ -87,7 +91,9 @@ export function ThemeToggle() {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </motion.svg>
         )}
-        <span className="sr-only">{theme === "dark" ? "Light" : "Dark"} mode</span>
+        <span className="sr-only">
+          {theme === "dark" ? "Light" : "Dark"} mode
+        </span>
       </Button>
     </motion.div>
   );
