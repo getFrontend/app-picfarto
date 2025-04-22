@@ -6,13 +6,13 @@ import ImageUploader from "@/components/ImageUploader";
 import GridControls from "@/components/GridControls";
 import GridCanvas from "@/components/GridCanvas";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import {
   cutImageIntoGrid,
   cutImageWithGridLines,
   createAndDownloadZip,
 } from "@/utils/imageProcessing";
-import Image from "next/image";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -177,30 +177,14 @@ export default function Home() {
 
   return (
     <motion.div
-      className="min-h-screen p-8 max-w-6xl mx-auto"
+      className="min-h-screen p-8 max-w-6xl mx-auto flex flex-col"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.header
-        className="mb-8 text-center relative"
-        initial={{ y: -20 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 0.1, type: "spring" }}
-      >
-        <div className="absolute right-0 top-0">
-          <ThemeToggle />
-        </div>
-        <h1 className="flex gap-2 items-center justify-center mb-2">
-          <Image src="/images/logo-picfarto.png" alt="Logo Picfarto" width={42} height={42} />
-          <span className="text-3xl font-bold mb-2">Image Grid Cutter</span>
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          Upload an image, set your grid dimensions, and download the cut pieces
-        </p>
-      </motion.header>
+      <Header />
 
-      <main className="flex flex-col gap-8">
+      <main className="flex flex-1 flex-col gap-8">
         <AnimatePresence mode="wait">
           {!imageUrl ? (
             <motion.div
@@ -294,14 +278,7 @@ export default function Home() {
         </AnimatePresence>
       </main>
 
-      <motion.footer
-        className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      >
-        <p>© {new Date().getFullYear()} Image Grid Cutter App</p>
-      </motion.footer>
+      <Footer />
     </motion.div>
   );
 }
