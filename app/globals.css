@@ -74,7 +74,8 @@
     font-family: var(--font-sans);
   }
 
-  button {
-    cursor: pointer;
+  button,
+  [role="button"] {
+    @apply cursor-pointer;
   }
 }
