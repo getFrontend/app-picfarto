@@ -67,10 +67,15 @@
   }
 }
 
+@layer components {
+  .bg-theme-gradient {
+    @apply bg-gradient-to-b from-white to-gray-100 dark:from-gray-700 dark:to-black;
+  }
+}
+
 @layer base {
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    color: hsl(var(--foreground)); 
     font-family: var(--font-sans);
   }
 
