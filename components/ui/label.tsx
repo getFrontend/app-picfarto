@@ -10,7 +10,6 @@ const Label = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => (
   <motion.div
-    whileHover={{ scale: 1.02 }}
     transition={{ type: "spring", stiffness: 400, damping: 10 }}
   >
     <LabelPrimitive.Root

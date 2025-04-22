@@ -69,7 +69,11 @@
 
 @layer components {
   .bg-theme-gradient {
-    @apply bg-gradient-to-b from-white to-gray-100 dark:from-gray-700 dark:to-black;
+    @apply bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-black;
+  }
+
+  .bg-primary {
+    @apply bg-gray-300 dark:bg-black;
   }
 }
 

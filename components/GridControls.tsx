@@ -100,12 +100,12 @@ export default function GridControls({
 
       <div className="grid grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="rows" className="mb-2 block">
+          <Label htmlFor="rows" className="mb-4 block">
             Rows: {rows}
           </Label>
           <Slider
             id="rows"
-            min={1}
+            min={2}
             max={10}
             step={1}
             value={[rows]}
@@ -116,12 +116,12 @@ export default function GridControls({
         </div>
 
         <div>
-          <Label htmlFor="columns" className="mb-2 block">
+          <Label htmlFor="columns" className="mb-4 block">
             Columns: {columns}
           </Label>
           <Slider
             id="columns"
-            min={1}
+            min={2}
             max={10}
             step={1}
             value={[columns]}
@@ -138,12 +138,12 @@ export default function GridControls({
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-          This will create {rows * columns} image
+        <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-3">
+          App will create {rows * columns} image
           {rows * columns !== 1 ? "s" : ""}
         </p>
         <p className="text-xs text-blue-500 dark:text-blue-400 mb-3">
-          Tip: Hover over grid lines to adjust them precisely with your mouse
+          💡Tip: Hover over grid lines to adjust them precisely with your mouse
         </p>
         <Button onClick={onCutClick} disabled={disabled} className="w-full">
           Cut Image into Grid

@@ -266,7 +266,7 @@ export default function GridCanvas({
       )}
       <canvas
         ref={canvasRef}
-        className="max-w-full h-auto"
+        className="max-w-full h-auto mx-auto"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
