@@ -105,7 +105,7 @@ export default function GridControls({
           </Label>
           <Slider
             id="rows"
-            min={2}
+            min={1}
             max={10}
             step={1}
             value={[rows]}
@@ -121,7 +121,7 @@ export default function GridControls({
           </Label>
           <Slider
             id="columns"
-            min={2}
+            min={1}
             max={10}
             step={1}
             value={[columns]}
